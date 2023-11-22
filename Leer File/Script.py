@@ -1,7 +1,7 @@
 import csv
 
 # Obtenemos la ruta del archivo desde la variable de entorno
-ruta = '/app/Leer.txt'
+ruta = './data/Leer.txt'
 
 with  open(ruta, encoding='latin1') as csvarchivo:
       entrada=csv.reader(csvarchivo)

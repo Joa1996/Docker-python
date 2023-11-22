@@ -1,18 +1,12 @@
-FROM ubuntu:latest  
-
-
-#Debemos instalar las correspondientes dependencias, en este caso instalar python del container de linux que correremos
-RUN apt update
-#Con apt update logramos primero actualizar las aplicaciones antes de instalar la version de python
-RUN apt install python3 -y  
-
+FROM python:3.9.10-bullseye
+RUN pip install --upgrade pip
 
 WORKDIR  /app 
 
-COPY Script.py Leer.txt ./
+COPY . .
 
+CMD ["python", "Script.py"]
 
-
-CMD [ "python3","./Script.py"]
 
 #docker build -t 2019911/docker-test:1.0.0 .
+#PS D:\Mi Unidad\Cursos\Docker\Python Script\N2> docker container run -v "${pwd}/data:/app/data" 2019911/docker-test:latest
